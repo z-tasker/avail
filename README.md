@@ -44,16 +44,16 @@ export OPENAI_API_KEY=yourapikey
 avail prompt "Hello, how are you?"
 ```
 
-2. `MakeReadme`: Generates a README file for a set of source files
+2. `MakeReadme`: Generates a README file for a set of source files, for instance this README was initialized with:
 
 ```
 avail MakeReadme main.go
 ```
 
-3. `MakeTests`: Generates test files for a set of source files
+3. `MakeTests`: Generates test files for a set of source files, for instance some of this repo's tests were initalized with:
 
 ```
-avail MakeTests main.go --PackageName my_package
+avail MakeTests --PackageName github.com/z-tasker/avail util/util.go
 ```
 
 4. `MakeTagline`: Generates a tagline for the project
@@ -62,14 +62,14 @@ avail MakeTests main.go --PackageName my_package
 avail MakeTagline main.go
 ```
 
-5. `MakeLogo`: Generates a set of candidate logos for the project
+5. `MakeLogo`: Generates a set of candidate logos for the project, you guessed it, the logo in this readme was generated with:
 
 ```
-avail MakeLogo main.go --OutputDir logos
+avail MakeLogo --OutputDir logos main.go
 ```
 
 Note: Replace `main.go` with the path to your project's source files.
 
 ## Customization
 
-You can customize the prompts and style guides for each command by modifying the `config` package. Further customization can be done by extending or modifying the `ai/completion` and `ai/image` packages.
+You can customize the prompts and style guides for each command by modifying the `avail.toml` config file.
