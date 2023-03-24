@@ -1,0 +1,27 @@
+[Log]
+Level = "info"
+Format = "console"
+
+[StyleGuides]
+Readme = "For python code: we use `poetry` to manage dependencies and to run our code with `poetry run <script>`. For go code: we use `go mod` to manage dependencies. In lieu of listing requirements, refer the user to the language specific requirements file. Focus on summarizing the functionality of the code in the README, if the code contains a server or CLI tool, list the arguments the user can pass. Be sure to note any important environment variables the user should set up."
+Python = "Python style guide: Use type hints, use pathlib.Path for handling paths."
+Go = ""
+Typescript = ""
+
+[DetermineLanguage]
+Prompt = "In one word, what programming language is this: "
+
+[MakeTagline]
+Prompt = "without using quotations, give a short fun and whimsical tagline to describe this code: "
+
+[MakeReadme]
+Prompt = "write a README for the project containing these files: "
+
+[MakeTests]
+Prompt = "Write unit tests for these files, put the tests for each file into their own corresponding files. Files: "
+
+[MakeLogo]
+ArtStyles = ["cyberpunk art", "surrealist art", "line art", "oil painting"]
+Prompt = " depicting the abstract concept of "
+
+# OpenAIAPIKey set as OPENAI_API_KEY environment variable
