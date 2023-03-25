@@ -14,11 +14,18 @@ type availConfig struct {
 		Format string
 	}
 
-	StyleGuides struct {
-		Readme     string
-		Python     string
-		Go         string
-		Typescript string
+	CodeStyleGuides struct {
+        Shared       string
+		Python       string
+		Go           string
+		Typescript   string
+	}
+
+	ReadmeStyleGuides struct {
+        Shared       string
+		Python       string
+		Go           string
+		Typescript   string
 	}
 
 	DetermineLanguage struct {
@@ -118,20 +125,36 @@ func (c *Config) OpenAIAPIKey() string {
 	return c.data.OpenAIAPIKey
 }
 
-func (c *Config) StyleGuideReadme() string {
-	return c.data.StyleGuides.Readme
+func (c *Config) ReadmeStyleGuideShared() string {
+	return c.data.ReadmeStyleGuides.Shared
 }
 
-func (c *Config) StyleGuidePython() string {
-	return c.data.StyleGuides.Python
+func (c *Config) ReadmeStyleGuidePython() string {
+	return c.data.ReadmeStyleGuides.Python
 }
 
-func (c *Config) StyleGuideGo() string {
-	return c.data.StyleGuides.Go
+func (c *Config) ReadmeStyleGuideGo() string {
+	return c.data.ReadmeStyleGuides.Go
 }
 
-func (c *Config) StyleGuideTypescript() string {
-	return c.data.StyleGuides.Typescript
+func (c *Config) ReadmeStyleGuideTypescript() string {
+	return c.data.ReadmeStyleGuides.Typescript
+}
+
+func (c *Config) CodeStyleGuideShared() string {
+	return c.data.CodeStyleGuides.Shared
+}
+
+func (c *Config) CodeStyleGuidePython() string {
+	return c.data.CodeStyleGuides.Python
+}
+
+func (c *Config) CodeStyleGuideGo() string {
+	return c.data.CodeStyleGuides.Go
+}
+
+func (c *Config) CodeStyleGuideTypescript() string {
+	return c.data.CodeStyleGuides.Typescript
 }
 
 func (c *Config) DetermineLanguagePrompt() string {

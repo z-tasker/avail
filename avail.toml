@@ -2,9 +2,15 @@
 Level = "info"
 Format = "console"
 
-[StyleGuides]
-Readme = "For python code: we use `poetry` to manage dependencies and to run our code with `poetry run <script>`. For go code: we use `go mod` to manage dependencies. In lieu of listing requirements, refer the user to the language specific requirements file. Focus on summarizing the functionality of the code in the README, if the code contains a server or CLI tool, list the arguments the user can pass. Be sure to note any important environment variables the user should set up."
-Python = "Python style guide: Use type hints, use pathlib.Path for handling paths."
+[CodeStyleGuides]
+Shared = ""
+Python = "Python style guide: Use type hints, use pathlib.Path for handling paths. Use argparse for accepting commandline flags, and use environment variables in argparse defaults."
+Go = ""
+Typescript = ""
+
+[ReadmeStyleGuides]
+Shared = "In lieu of listing requirements, refer the user to the language specific requirements file. Focus on summarizing the functionality of the code in the README, if the code contains a server or CLI tool, list the arguments the user can pass. Be sure to note any important environment variables the user should set up. Point the user at the relevant parts of the code they should read to understand what the code does."
+Python = "For python code: we use `poetry` to manage dependencies and to run our code with `poetry run <script>`."
 Go = ""
 Typescript = ""
 

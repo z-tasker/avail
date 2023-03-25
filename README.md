@@ -36,6 +36,12 @@ Before running Avail, ensure that you have set the OpenAI API key as an environm
 export OPENAI_API_KEY=yourapikey
 ```
 
+For up to date usage information, run `avail` with no commands, or `avail -h`:
+
+``
+avail -h
+``
+
 ### Available Commands
 
 1. `prompt`: Sends a prompt to the OpenAI API
