@@ -5,7 +5,22 @@ Format = "console"
 [CodeStyleGuides]
 Shared = ""
 Python = "Python style guide: Use type hints, use pathlib.Path for handling paths. Use argparse for accepting commandline flags, and use environment variables in argparse defaults."
-Go = ""
+Go = '''
+Use the programming language Go, and adhere to these style suggestions:
+1. **Defer to clean up**: Use `defer` keyword to clean up resources such as files and locks, as it makes the code more readable and reduces the chances of missing clean up steps.
+2. **Channel size**: Channels should usually have a size of one or be unbuffered to avoid issues with channel filling up under load and blocking writers.
+3. **Start enums at one**: Declare enumerations in Go by creating a custom type and a `const` group with `iota`. Start your enums on a non-zero value as Go variables have a default value of 0.
+4. **Handling time**: Always use the `"time"` package when dealing with time for safer and more accurate operations. Use `time.Time` for dealing with instants of time and `time.Duration` for periods of time.
+5. **Error handling**:
+   - Differentiate between static and dynamic error messages.
+   - Use error wrapping to add context to your errors.
+   - Use proper naming for global error variables and custom error types.
+6. **Code formatting**:
+   - Avoid overly long lines, aim for a soft line length limit of 99 characters.
+   - Maintain consistency in the code to make it easier to maintain and understand.
+   - Organize import groups into standard library and everything else.
+   - Choose package names that are lower-case, short, not plural, and not generic.
+'''
 Typescript = ""
 
 [ReadmeStyleGuides]
@@ -19,6 +34,7 @@ Prompt = "In one word, what programming language is this: "
 
 [MakeTagline]
 Prompt = "without using quotations, give a short fun and whimsical tagline to describe this code: "
+#MaxTokens = 500
 
 [MakeReadme]
 Prompt = "write a README for the project containing these files: "

@@ -32,7 +32,7 @@ func main() {
 				Usage:   cmd.PromptUsage(),
 				Flags:   cmd.PromptFlags(),
 				Action: func(ctx *cli.Context) error {
-                    return cmd.Prompt(ctx, openAIClient)
+                    return cmd.Prompt(ctx, config, openAIClient)
 				},
 			},
 			{

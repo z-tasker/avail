@@ -41,7 +41,9 @@ func GetLanguageSpecificReadmeStyleGuide(config *config.Config, language string)
 	case "typescript":
 		readmeStyleGuide = fmt.Sprintf("%s %s", config.ReadmeStyleGuideShared(), config.ReadmeStyleGuideTypescript())
 	default:
-		log.Warn().Msg(fmt.Sprintf("No style guide available for %s", language))
+        if len(language) > 0 {
+		    log.Warn().Msg(fmt.Sprintf("No style guide available for %s", language))
+        }
 		readmeStyleGuide = config.ReadmeStyleGuideShared()
 	}
 
@@ -61,7 +63,9 @@ func GetLanguageSpecificCodeStyleGuide(config *config.Config, language string) (
 	case "typescript":
 		codeStyleGuide = fmt.Sprintf("%s %s", config.CodeStyleGuideShared(), config.CodeStyleGuideTypescript())
 	default:
-		log.Warn().Msg(fmt.Sprintf("No style guide available for %s", language))
+        if len(language) > 0 {
+		    log.Warn().Msg(fmt.Sprintf("No style guide available for %s", language))
+        }
 		codeStyleGuide = config.CodeStyleGuideShared()
 	}
 

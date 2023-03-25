@@ -11,18 +11,13 @@ import (
 	"path/filepath"
 )
 
-func SimpleCompletion(prompt string, openAIClient *openai.Client, maxTokens int) (string, error) {
+func ChatCompletion(messages []openai.ChatCompletionMessage, openAIClient *openai.Client, maxTokens int) (string, error) {
 	resp, err := openAIClient.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
 			Model:     openai.GPT4,
 			MaxTokens: maxTokens,
-			Messages: []openai.ChatCompletionMessage{
-				{
-					Role:    openai.ChatMessageRoleUser,
-					Content: prompt,
-				},
-			},
+			Messages: messages,
 		},
 	)
 
@@ -33,7 +28,6 @@ func SimpleCompletion(prompt string, openAIClient *openai.Client, maxTokens int)
 	completion := resp.Choices[0].Message.Content
 
 	log.Debug().
-		Str("Prompt", prompt).
 		Str("Response", completion).
 		Int("MaxTokens", maxTokens).
 		Msg("")
